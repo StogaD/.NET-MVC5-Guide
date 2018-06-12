@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVCTestApp.Infrastructure.Enums;
+using MVCTestApp.Infrastructure.Routing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,8 @@ namespace MVCTestApp
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            CustomRoutesRegister.RegisterCustomRoutes(routes, RoutingSwicth.Enabled);
 
             routes.MapRoute(
                 name: "Default",
