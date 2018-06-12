@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AirPlane.WebUI.Controllers.MVCGuide
+namespace MvcGuide.Controllers
 {
     public class MvcGuideController : Controller {
 

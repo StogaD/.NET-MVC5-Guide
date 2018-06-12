@@ -164,6 +164,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Enums\Role.cs" />
+    <Compile Include="Models\Description.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonalAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -986,12 +990,10 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\MvcGuide\ControllerAction.cshtml" />
     <Content Include="Views\MvcGuide\EFAction.cshtml" />
-    <Content Include="Views\MvcGuide\HelperMethod.cshtml" />
     <Content Include="Views\MvcGuide\ViewAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
