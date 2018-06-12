@@ -1,0 +1,100 @@
+﻿
+
+<a class="btn btn-block btn-default btn-lg  btn-info" data-toggle="collapse" href="#collapse1">MVC  Guide </a>
+<div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+        @Html.RouteLink("Model- Entity Framework",
+    new
+    {
+        Controller = "MVCGuide",
+        action = "EFAction"
+    },
+    new
+    {
+        @class = ""
+    }
+    )
+    </div>
+
+    <div class="panel-body">
+        @Html.RouteLink("Controller",
+    new
+    {
+        Controller = "MVCGuide",
+        action = "ControllerAction"
+    },
+    new
+    {
+        @class = ""
+    }
+    )
+    </div>
+
+
+    <div class="panel-body">
+        @Html.RouteLink("View",
+    new
+    {
+        Controller = "MVCGuide",
+        action = "ViewAction"
+    },
+    new
+    {
+        @class = ""
+    }
+    )
+    </div>
+    <div class="panel-body">
+        @Html.RouteLink("Helper Method - Controls",
+    new
+    {
+        Controller = "MVCGuide",
+        action = "HelperMethod"
+    },
+    new
+    {
+        @class = ""
+    }
+    )
+    </div>
+     <div class="panel-body">Panel Body</div>
+    <div class="panel-footer">Panel Footer</div>
+    <div class="panel-body">
+        @Html.RouteLink("Helper Method - URL",
+    new
+    {
+        Controller = "People",
+        action = "Index"
+    }
+    
+   
+    )
+    </div>
+    <div class="panel-body">
+        @Html.RouteLink("Helper Method - Ajax",
+    new
+    {
+        Controller = "People",
+        action = "GetPeopleAjax"
+    }
+
+
+    )
+    </div>
+
+    <div class="panel-body">
+        @Html.RouteLink("Web API",
+    new
+    {
+        Controller = "MVCGuide",
+        action = "HelperMethod"
+    },
+    new
+    {
+        @class = "panel-body"
+    }
+    );
+    </div>
+</div>
+
+

@@ -1,0 +1,82 @@
+﻿@using AirPlane.WebUI.Models.MVCGuide
+@model Person
+@{
+    ViewBag.Title = "HelperMethod";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Angular {
+
+    <div ng-app="">
+
+        <h1>HelperMethods</h1>
+        <h2>1. Angular framework</h2>
+        <input  ng-model="helloAngular"   value="This is Angular section"/>
+        <h4 ng-bind="helloAngular"></h4>
+
+
+    </div>
+    }
+
+
+  <h2>2. Forms</h2>
+ <br />Simle BeginRouteForm
+
+        @using (Html.BeginForm())
+        {   
+            <label> Label1 </label>
+            <input name="personId" value="Controller and action not indicated" />
+        }
+
+
+        @{
+            string bf = "Html.BeginForm(\"List\", \"Aircraft\",new { category = \"Passenger\" }, FormMethod.Post, new { @class = \"bg - warning\" } )";
+        }
+        <br />Full BeginForm
+        @using (Html.BeginForm("List", "Aircraft", new {}, FormMethod.Post, new { enctype = "multipart/form-data", @class = "bg-warning" }))
+        {
+            <label> Label2 </label>
+            <input name="category" data-toggle="tooltip" id="category" title="@bf" value="Controller,action, Form, class are indicated" />
+        }
+
+        <br />BeginRouteForm
+@using (Html.BeginRouteForm("CategoryOnly", new { }, FormMethod.Get, new { @class = "bg-info" }))
+{
+    <input name="category" value="category"/>
+}
+<h2>3. Inputs </h2>
+@Html.CheckBox("Select",false)
+<br />
+@Html.Hidden("MyHidden","val")
+<br />
+@Html.RadioButton("Select", "val1", true,"val1")
+<br />
+@Html.RadioButton("Select", "val2", false)<br />
+@Html.RadioButton("Select", "val2", false)<br />
+@Html.Password("password")<br />
+@Html.TextArea("name", "value")<br />
+@Html.TextBox("name")<br />
+
+
+@Html.DropDownList("MyList", new SelectList(new[] { "MVC", "WEB API", "WCF", "WPF" }), "Chose");<br />
+@Html.ListBox("MyListBox", new MultiSelectList(new[] { "Windows", "Android", "Linux" }), "Let select");<br />
+
+
+<h3> Template Helpers</h3>
+<div>
+<div>
+ @Html.EditorFor(m => m.BirthDate)
+@Html.Editor("BirthDate")
+@Html.Editor("IsApproved")<br />   
+</div>
+<div> @Html.EditorForModel() </div>
+    <div> @Html.EditorForModel() </div>
+lklkl
+
+</div>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+

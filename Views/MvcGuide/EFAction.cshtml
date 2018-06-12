@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AirPlane.Domain.Entities.Student>
+
+@{
+    ViewBag.Title = "EFAction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EFAction</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Address.Address1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address.Address1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EFAction", new { id=item.StudentId }) |
+            @Html.ActionLink("Details", "EFAction", new { id=item.StudentId }) |
+            @Html.ActionLink("Delete", "EFAction", new { id=item.StudentId })
+        </td>
+    </tr>
+}
+
+</table>
+<div ><ul>
+    <li>Code first, Model First, DataBase First</li>
+    <li>Create POCO class (es)</li>
+    <li>Create context class inherited from DbContext </li>
+    <li>Configure/Map/Adjust tables/entities by fluent API or Attributes</li>
+    <li>Set Migration</li>
+    <li>Update/ Save / Load /</li>
+    <li>Linq to Entity </li>
+    <li>Querying Asynchronously</li>
+    <li>Native SQL</li>
+    <li>Lazy Loading</li>
+    <li>Eager Loading</li>
+    <li>Quering in Memory</li>
+
+</ul></div>
