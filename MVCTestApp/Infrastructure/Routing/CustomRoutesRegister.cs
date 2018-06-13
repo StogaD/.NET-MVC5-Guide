@@ -18,6 +18,16 @@ namespace MVCTestApp.Infrastructure.Routing
                 throw new NullReferenceException("routeCollection shouldn't be null - pass a valid collecton");
             }
 
+            var legacyRoute = new LegacyRoute(
+                          "~/Articles/WindowsXp", "~/old/.NET1,0_Class_Library");
+
+            routes.Add("Legacy",legacyRoute);
+
+
+
+            var customRoute = new Route("CustomRoute/{action}", new CustomRouteHandler());
+
+            routes.Add("customHandler", customRoute);
 
             // 1. Creating a simple Route, MvcRouteHandler from System.Web.Mvc
             var newRoute = new Route("{controller }/Route{action}", new MvcRouteHandler());
@@ -47,7 +57,7 @@ namespace MVCTestApp.Infrastructure.Routing
             //   6. static Page
             routes.MapRoute(
                 name: "showImage",
-                url: "Content/StaticContent.html",
+                url: "Content/Welcome.html",
                 defaults: new { controller = "Custom", action = "showImage", id = UrlParameter.Optional }
                 );
 
@@ -69,7 +79,7 @@ namespace MVCTestApp.Infrastructure.Routing
             routes.MapRoute(
                name: "Paging",
                url: "P{page}",
-               defaults: new { controller = "AirCraft", action = "List", category = (string)null },
+               defaults: new { controller = "9AirCraft", action = "List", category = (string)null },
                constraints: new { page = @"\d+" }
                );
 
@@ -77,7 +87,7 @@ namespace MVCTestApp.Infrastructure.Routing
             routes.MapRoute(
                 "CateforyAndPage",
                 "{category}/P{page}",
-                new { controller = "AirCraft", action = "List" },
+                new { controller = "10AirCraft", action = "List" },
                 new { page = @"\d+" }
             );
 
@@ -85,25 +95,17 @@ namespace MVCTestApp.Infrastructure.Routing
             routes.MapRoute(
                 name: "Segment2",
                 url: "{controller}/X{action}/{id}",
-                defaults: new { controller = "AirCraft", action = "List", id = UrlParameter.Optional }
+                defaults: new { controller = "11AirCraft", action = "List", id = UrlParameter.Optional }
             );
             /*  12.  Defining http constraint and namespace  */
             var myMpaRoute = routes.MapRoute(
                 name: "DefaultWithconstraint",
                 url: "{controller}/{action}/{id}/{*catchall}",
-                defaults: new { controller = "AirCraft", action = "List", id = UrlParameter.Optional },
+                defaults: new { controller = "12AirCraft", action = "List", id = UrlParameter.Optional },
                 constraints: new { action = "^L.*", httpMethod = new HttpMethodConstraint("GET", "POST") },
                 namespaces: new[] { "AirPlane.WebUI.Controllers.RoutingURL" }
             );
 
-            /*  13.  Defining  namespace  */
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}/{*catchall}",
-                defaults: new { controller = "AirCraft", action = "List", id = UrlParameter.Optional },
-                namespaces: new[] { "AirPlane.WebUI.Controllers" }
-                
-                );
 
 /* TODO:             "investiage this part" */
                 /*disable searching other namespaces  
@@ -114,32 +116,13 @@ namespace MVCTestApp.Infrastructure.Routing
             routes.MapRoute(
                 name: "AllCategorty",
                 url: "",
-                defaults: new { controller = "AirCraft", action = "List", category = (string)null, page = 1 }
+                defaults: new { controller = "13AirCraft", action = "List", category = (string)null, page = 1 }
                 );
-
-            routes.MapRoute(
-               name: "Paging",
-               url: "P{page}",
-               defaults: new { controller = "AirCraft", action = "List", category = (string)null },
-               constraints: new { page = @"\d+" }   //one on ore integers {page}
-               );
-            //P1
-            //P2
 
             routes.MapRoute(name: "CategoryOnly",
                 url: "{category}",
-                defaults: new { controller = "AirCraft", action = "List", page = 1 }
+                defaults: new { controller = "14AirCraft", action = "List", page = 1 }
                 );
-            //Test
-            //Military
-
-            routes.MapRoute("CateforyAndPage",
-            "{category}/P{page}",
-            new { controller = "AirCraft", action = "List" },
-            new { page = @"\d+" }
-            );
-
-            //Military/P2
 
             routes.MapRoute(
                 name: "FormRoute",
@@ -148,17 +131,17 @@ namespace MVCTestApp.Infrastructure.Routing
                 namespaces: new[] { "AirPlane.WebUI.Controllers.MVCGuide" }
                 );
 
-            //People/Indenx
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "AirCraft", action = "List", id = UrlParameter.Optional },
-                namespaces: new[] { "AirPlane.WebUI.Controllers" }
-            //AirCraft/List/4
-            );
 
-          /* 15. To enable attribute routing, call MapMvcAttributeRoutes during configuration. */
-          routes.MapMvcAttributeRoutes();
+            /*  13.  Defining  namespace  */
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}/{*catchall}",
+            //    defaults: new { controller = "AirCraft", action = "List", id = UrlParameter.Optional },
+            //    namespaces: new[] { "AirPlane.WebUI.Controllers" }
+            //    );
+
+            /* 15. To enable attribute routing, call MapMvcAttributeRoutes during configuration. */
+            //routes.MapMvcAttributeRoutes();
         }
 
 

@@ -47,6 +47,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RouteDebugger, Version=2.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\routedebugger.2.1.5\lib\net40\RouteDebugger.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -155,9 +158,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HelperMethods\RoutingHelpers.cs" />
+    <Compile Include="Infrastructure\Controllers\CustomControllerFactory.cs" />
     <Compile Include="Infrastructure\Enums\RoutingEnabled.cs" />
     <Compile Include="Infrastructure\Interfaces\ICustomRoutesRegister.cs" />
+    <Compile Include="Infrastructure\Routing\CustomHttpHandler.cs" />
+    <Compile Include="Infrastructure\Routing\CustomRouteHandler.cs" />
     <Compile Include="Infrastructure\Routing\CustomRoutesRegister.cs" />
+    <Compile Include="Infrastructure\Routing\LegacyRoute.cs" />
     <Compile Include="Infrastructure\Routing\UserAgentConstraint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
