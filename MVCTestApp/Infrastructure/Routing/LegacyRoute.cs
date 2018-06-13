@@ -37,7 +37,8 @@ namespace MVCTestApp.Infrastructure.Routing
         
         public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new VirtualPathData(this, "~/Home/Index");
         }
 
     }

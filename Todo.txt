@@ -1,0 +1,2 @@
+1. Attribute Routing need to be added.
+2. Controllers and Views should be added to present the routing 

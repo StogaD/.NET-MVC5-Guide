@@ -19,7 +19,7 @@ namespace MVCTestApp
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-            ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+          //  ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
         }
     }
 }
