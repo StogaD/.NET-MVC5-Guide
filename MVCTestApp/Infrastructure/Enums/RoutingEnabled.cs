@@ -6,5 +6,6 @@ using System.Web;
 namespace MVCTestApp.Infrastructure.Enums
 {
   public enum RoutingSwicth { Enabled = 0, Disabled = 1};
+  public enum FeatureSwicth { Enabled = 0, Disabled = 1 };
 
 }

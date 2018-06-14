@@ -13,21 +13,25 @@ namespace MVCTestApp.Infrastructure.Routing
     {
         public  static void RegisterCustomRoutes(RouteCollection routes, RoutingSwicth routeSwitch)
         {
-           if(routes == null || routeSwitch == RoutingSwicth.Disabled)
+           if(routes == null )
             {
                 throw new NullReferenceException("routeCollection shouldn't be null - pass a valid collecton");
             }
 
-            var legacyRoute = new LegacyRoute(
-                          "~/Articles/WindowsXp", "~/old/.NET1,0_Class_Library");
+            if (routeSwitch == RoutingSwicth.Disabled)
+            {
+                return;
+            }
+            //var legacyRoute = new LegacyRoute(
+            //              "~/Articles/WindowsXp", "~/old/.NET1,0_Class_Library");
 
-            routes.Add("Legacy",legacyRoute);
+            //routes.Add("Legacy",legacyRoute);
 
 
 
             var customRoute = new Route("CustomRoute/{action}", new CustomRouteHandler());
 
-            routes.Add("customHandler", customRoute);
+          //  routes.Add("customHandler", customRoute);
 
             // 1. Creating a simple Route, MvcRouteHandler from System.Web.Mvc
             var newRoute = new Route("{controller }/Route{action}", new MvcRouteHandler());
@@ -43,7 +47,7 @@ namespace MVCTestApp.Infrastructure.Routing
             routes.MapRoute(
                name: "ForChromeOnly",
                url: "ALL",
-               defaults: new { controller = "Custom", action = "Index", id = UrlParameter.Optional },
+               defaults: new { controller = "CustomDetails", action = "Index", id = UrlParameter.Optional },
                constraints: new { customConstraint = new UserAgentConstraint("Chrome") }
                );
 
@@ -51,7 +55,7 @@ namespace MVCTestApp.Infrastructure.Routing
             routes.MapRoute(
                name: "Spec_Static_SegmIE",
                url: "ALL",
-               defaults: new { controller = "Custom", action = "CustomVariable", id = UrlParameter.Optional },
+               defaults: new { controller = "Sale", action = "CustomVariable", id = UrlParameter.Optional },
                constraints: new { customConstraint = new UserAgentConstraint("Trident") });
 
             //   6. static Page

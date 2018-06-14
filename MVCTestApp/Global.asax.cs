@@ -1,4 +1,6 @@
 ﻿using AirPlane.WebUI.Infrastructure;
+using MVCTestApp.Infrastructure.Controllers;
+using MVCTestApp.Infrastructure.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,10 @@ namespace MVCTestApp
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        /* Config section */
+        FeatureSwicth controllerFactoryFlag = FeatureSwicth.Disabled;
+
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -19,7 +25,18 @@ namespace MVCTestApp
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-          //  ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+            if (controllerFactoryFlag == FeatureSwicth.Enabled)
+            {
+                /* Create Controller instance by using custom ControllerFactory 1-total custom  2 - based on Default */
+            ControllerBuilder.Current.SetControllerFactory(new BasedOnDefaultControllerFactory(new CustomControllerActivator()));
+            ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+            }
+
+
+
+
+
+
         }
     }
 }

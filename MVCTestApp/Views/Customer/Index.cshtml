@@ -11,11 +11,18 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
+    <div>
 
-   @Html.ActionLink("Simple Parameter", "Info", "Customer", new { CustomerID = 10 }, null);
+        <div>
+            @Html.RouteLink("LINK", "Paging", new { });
+            @Html.RouteLink("Edit Carrier", "Paging", new { controller = "Base", action = "Index" })
 
 
-    </div>
+
+
+
+
+        </div>
+        </div>
 </body>
 </html>

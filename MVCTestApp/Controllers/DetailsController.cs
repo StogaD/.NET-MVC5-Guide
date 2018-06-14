@@ -7,14 +7,14 @@ using System.Web.Mvc;
 
 namespace MVCTestApp.Controllers
 {
-    public class HomeController : Controller
+    public class DetailsController : Controller
     {
-        public HomeController()
+        public DetailsController()
         {
-            //total cusrtomActionInvoker
-             this.ActionInvoker = new CustomActionInvoker();
-            //Modified Web.MVc ActionInvoker -see DetailsController
-            //this.ActionInvoker = new CustomActionInvokerBasedOnDefault();
+            //total cusrtomActionInvoker - see Homecontroller
+            // this.ActionInvoker = new CustomActionInvoker();
+            //Modified Web.MVc ActionInvoker
+            this.ActionInvoker = new CustomActionInvokerMvcBased();
 
         }
         // GET: Homes

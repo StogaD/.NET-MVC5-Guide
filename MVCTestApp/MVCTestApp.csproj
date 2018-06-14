@@ -153,11 +153,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Infrastructure\Controllers\CustomControllerActivator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HelperMethods\RoutingHelpers.cs" />
+    <Compile Include="Infrastructure\Actions\CustomActionInvoker.cs" />
+    <Compile Include="Infrastructure\Actions\CustomActionInvokerMvcBased.cs" />
+    <Compile Include="Infrastructure\Controllers\BasedOnDefaultControllerFactory.cs" />
     <Compile Include="Infrastructure\Controllers\CustomControllerFactory.cs" />
     <Compile Include="Infrastructure\Enums\RoutingEnabled.cs" />
     <Compile Include="Infrastructure\Interfaces\ICustomRoutesRegister.cs" />
@@ -215,6 +220,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Details\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

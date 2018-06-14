@@ -9,6 +9,8 @@ namespace MVCTestApp.Controllers
 {
     public class CustomerController : Controller
     {
+
+        private const int DefaultID = 50;
         // GET: Customer
         public ActionResult Index()
         {
@@ -16,12 +18,14 @@ namespace MVCTestApp.Controllers
         }
         public void Info(int customerID)
         {
-            var url = Url.Action("Info", "Customer", new { customerID = 50 });
+        
+            //generate a fully qualified url.
+            var url = Url.Action("Info", "Customer", new { customerID = 10 });
 
             HttpContext.Response.Write(customerID);
 
         }
-        public void GetData(int customerID = 5)
+        public void GetData(int customerID = DefaultID)
         {
             HttpContext.Response.Write(customerID);
         }
