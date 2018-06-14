@@ -9,36 +9,13 @@ namespace MVCTestApp.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
-        {
-            //total cusrtomActionInvoker
-             this.ActionInvoker = new CustomActionInvoker();
-            //Modified Web.MVc ActionInvoker -see DetailsController
-            //this.ActionInvoker = new CustomActionInvokerBasedOnDefault();
 
-        }
-        // GET: Homes
-        [ActionName("Index-Off")]
-
-        public void Index()
+        
+        public CustomRedirectResult Index()
         {
-            HttpContext.Response.Write("Main Home Controller /index");
-        }
+            //HttpContext.Response.Write("Main Home Controller /index");
+            return new CustomRedirectResult();
 
-        public void Help()
-        {
-            HttpContext.Response.Write("Main Home Controller/Help");
-        }
-
-        [NonAction]
-        public void About()
-        {
-            HttpContext.Response.Write("About");
-        }
-
-        public void Result()
-        {
-            HttpContext.Response.Write("Result");
         }
     }
 }

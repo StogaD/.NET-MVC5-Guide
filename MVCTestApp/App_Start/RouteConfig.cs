@@ -14,7 +14,7 @@ namespace MVCTestApp
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            CustomRoutesRegister.RegisterCustomRoutes(routes, RoutingSwicth.Enabled);
+            CustomRoutesRegister.RegisterCustomRoutes(routes, RoutingSwicth.Disabled);
 
             routes.MapRoute(
                 name: "Default",

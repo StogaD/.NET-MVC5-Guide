@@ -151,10 +151,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AttributesExamples\AttrAController.cs" />
+    <Compile Include="Infrastructure\Filters\RangeExceptionAttribute.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RoutingExamples\RouteAController.cs" />
+    <Compile Include="Controllers\RoutingExamples\RouteBController.cs" />
+    <Compile Include="Controllers\RoutingExamples\RouteCController.cs" />
+    <Compile Include="Infrastructure\Actions\CustomRedirectResult.cs" />
     <Compile Include="Infrastructure\Controllers\CustomControllerActivator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +186,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Errors\RangeErrorPage.html" />
     <Content Include="Content\Welcome.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -216,11 +224,18 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Customer\CustomerIndex.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\RouteA\Index.cshtml" />
+    <Content Include="Views\AttrA\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\CustomizeExamples\" />
+    <Folder Include="Controllers\ResultExamples\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Details\" />
+    <Folder Include="Views\Message\" />
+    <Folder Include="Views\RouteB\" />
+    <Folder Include="Views\RouteC\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using MVCTestApp.Controllers.AttributesExamples;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVCTestApp
@@ -8,6 +9,7 @@ namespace MVCTestApp
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new RangeExceptionAttribute());
         }
     }
 }
