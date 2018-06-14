@@ -153,6 +153,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AttributesExamples\AttrAController.cs" />
     <Compile Include="Controllers\AttributesExamples\AttrBController.cs" />
+    <Compile Include="Controllers\AttributesExamples\AttrCController.cs" />
+    <Compile Include="HelperMethods\SendStringResponse.cs" />
     <Compile Include="Infrastructure\Filters\CustomAuthAttributes.cs" />
     <Compile Include="Infrastructure\Filters\RangeExceptionAttribute.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -231,10 +233,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Ajax\" />
     <Folder Include="Controllers\CustomizeExamples\" />
+    <Folder Include="Controllers\ParameterBinding\" />
     <Folder Include="Controllers\ResultExamples\" />
+    <Folder Include="Infrastructure\Binders\" />
     <Folder Include="Models\" />
     <Folder Include="Views\AttrB\" />
+    <Folder Include="Views\AttrC\" />
     <Folder Include="Views\Details\" />
     <Folder Include="Views\Message\" />
     <Folder Include="Views\RouteB\" />
