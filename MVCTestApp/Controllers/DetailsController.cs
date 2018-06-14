@@ -22,7 +22,7 @@ namespace MVCTestApp.Controllers
 
         public void Index()
         {
-            HttpContext.Response.Write("Main Home Controller /index");
+            HttpContext.Response.Write("Main Details Controller /index");
         }
 
         public void Help()
