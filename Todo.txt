@@ -31,3 +31,4 @@ Azure (for Indexer)
 	IO Stream itp
 
 	Walidacja
+	docker
