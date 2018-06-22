@@ -1,2 +1,33 @@
-1. Attribute Routing need to be added.
+﻿1. Attribute Routing need to be added.
 2. Controllers and Views should be added to present the routing 
+3. WebSeal - co to  jest.
+4. WebServuce, soap , itp.
+5. JSON - wszystko o nim
+6. SQL - wszytsko o nim !!!
+7. Linq - wszytsko o nim!!
+8. NoSQL
+9. PostMan
+10. Przejrzeć .NET
+11.ICollector
+12. Iteratory
+8998c28c-5aff-4108-bff3-05ca2225c010
+
+sciaga z microsoft
+Azure (for Indexer)	
+1. Create resouorce -> Service Bus	
+2. Add unique name, select West Europe, select resource group, create	
+3. Enter service bus namespace	
+4. Select Topics	
+5. Create "episerverfullreindex"	Requires session
+6. In "episerverfullreindex" add subscription "IndexingServer"	Requires session
+7. Create "episerverinidexing"	No sessions
+8. Add subscription "IndexingServer"	No sessions
+9. Add "Shared access policy" to Send and Listen	
+10. Copy connection strings and put in:	ConnectionStrings.IndexingServiceBus
+	ConnectionStrings.ReindexingServiceBus
+
+	.Autofac
+	Core
+	IO Stream itp
+
+	Walidacja
